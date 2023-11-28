@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/DialogueTest_CJ.unity
+    guid: 5c671c5dadcac414cb4afe1b6c5a77d6
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 57d3c3e7197f8594fa45e17f002cf3e2
+  - enabled: 1
+    path: Assets/Scenes/Openning.unity
+    guid: 563c8ae8588d0e4418fe77c838e72d74
+  - enabled: 1
+    path: Assets/Scenes/Overworld_CJ.unity
+    guid: f312025803851ed43ba84cc41a5f7ad0
+  - enabled: 1
+    path: Assets/Scenes/platformer_CJ.unity
+    guid: a259ad38efa6bca488c51772d3c5f00e
+  - enabled: 1
+    path: Assets/Scenes/Overworld_CJ_level2.unity
+    guid: 5fd33a1b5478232408d2a02f31534b14
+  - enabled: 1
+    path: Assets/Scenes/Salsa_Level3.unity
+    guid: 8f210865990b95a4c846102399c4fab4
+  - enabled: 0
+    path: Assets/Scenes/MainGame.unity
+    guid: f3157b30d18622742906d6eb97c9d724
+  - enabled: 0
+    path: Assets/Scenes/Tutorial.unity
+    guid: 87d88c28f83c5304186fc3fe58735eb9
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: f68e34f773ced274d8bc15e566ebe5d2
+  - enabled: 0
+    path: Assets/Scenes/YouLost.unity
+    guid: 63493a136a1f045729bbe825a5f1c669
+  - enabled: 0
+    path: Assets/Scenes/Level2.unity
+    guid: f68e34f773ced274d8bc15e566ebe5d2
+  - enabled: 0
+    path: Assets/Scenes/YouWin.unity
+    guid: f58a834d8db414f159c92420bf4696d3
+  - enabled: 0
+    path: Assets/Scenes/WinScreen.unity
+    guid: cbae09af7c70a054b9bfddf1d0bee461
+  - enabled: 1
+    path: Assets/Scenes/Overworld.unity
+    guid: 040898a5ead2ae443b504ec52d903bee
+  m_configObjects: {}

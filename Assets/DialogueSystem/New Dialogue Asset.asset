@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28886a182f9e35f478e3a61184de13d7, type: 3}
+  m_Name: New Dialogue Asset
+  m_EditorClassIdentifier: 
+  speakers:
+  - 'Introduction:'
+  - 'Introduction:'
+  - 'Introduction:'
+  lines:
+  - Amidst the dense forest, monkeys swing from tree to tree. Suddenly, the serenity
+    is shattered by distant tree crashes. Dust clouds roll in, the ground trembles,
+    and an ominous factory silhouette appears in the distance. The forest's heart
+    is under siege.
+  - "A concerned monkey named Salsa unearths a shimmering artifact and hides it hastily.
+    This artifact is a key to another time, a beacon of hope. As the factory continues
+    its encroachment, Salsa's thoughts turn to an old friend \u2013 Pavo, a peacock
+    with a unique past."
+  - For now, something bad happened in the forest! The whole world is now Black and
+    White! - Click to START
+	speed: []

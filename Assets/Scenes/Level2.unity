@@ -2067,6 +2067,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2008919901}
     - target: {fileID: 5814744247475575888, guid: 7d6cb2c4a32576a4fa3ccbbd2deb61cd, type: 3}
+      propertyPath: levelNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814744247475575888, guid: 7d6cb2c4a32576a4fa3ccbbd2deb61cd, type: 3}
       propertyPath: sceneToLoad
       value: Overworld
       objectReference: {fileID: 0}
@@ -2166,6 +2170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tsm: {fileID: 0}
+  pointer: {fileID: 0}
 --- !u!4 &2008919902
 Transform:
   m_ObjectHideFlags: 0
@@ -2457,7 +2462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2145797838
 MonoBehaviour:
   m_ObjectHideFlags: 0

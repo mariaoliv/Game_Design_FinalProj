@@ -45,7 +45,8 @@ public class PlayerController : MonoBehaviour
     Vector2 curPos;
 
     public QuestManager qm;
-    
+
+    //public Window_QuestPointer pointer;
 
     private void Start()
     {
@@ -75,7 +76,8 @@ public class PlayerController : MonoBehaviour
 
         if (fires.Length > 0 && qm.GetQuestState("PutOutFiresQuest") == QuestState.IN_PROGRESS) 
         {
-            GameObject nearestFire = findNearestFire(fires);
+            //GameObject nearestFire = findNearestFire(fires);
+            GameObject nearestFire = findNearestObjWithTag("Fire");
 
             float dist = Vector2.Distance(this.transform.position, nearestFire.transform.position);
 
@@ -174,6 +176,15 @@ public class PlayerController : MonoBehaviour
         }
 
         healthBar.SetHealth(health);
+        /*
+        if (Input.GetKeyDown(KeyCode.Plus))
+        {
+            pointer.TrackNextQuest();
+        }
+        if (Input.GetKeyDown(KeyCode.Minus))
+        {
+            pointer.TrackPrevQuest();
+        } */
 
     }
 
@@ -214,7 +225,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    GameObject findNearestFire(GameObject[] fires)
+    public GameObject findNearestFire(GameObject[] fires)
     {
         float minDist = Vector2.Distance(this.transform.position, fires[0].transform.position);
         GameObject nearestFire = fires[0];
@@ -229,7 +240,49 @@ public class PlayerController : MonoBehaviour
         return nearestFire;
     }
 
-    
+    public GameObject findNearestObjWithTag(string tag)
+    {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag(tag);
+
+        if (tag == "Quest Point")
+        {
+            objs = new GameObject[qm.GetNumNotStartedQuests()];
+            int idx = 0;
+            foreach (GameObject obj in GameObject.FindGameObjectsWithTag(tag))
+            {
+                string q_id = obj.GetComponent<QuestPoint>().GetQuestID();
+                if (qm.GetQuestState(q_id) == QuestState.CAN_START || qm.GetQuestState(q_id) == QuestState.REQUIREMENTS_NOT_MET)
+                {
+                    objs[idx] = obj;
+                    idx++;
+                }
+            }
+        }
+        
+
+        float minDist = Vector2.Distance(this.transform.position, objs[0].transform.position);
+        GameObject nearestObj = objs[0];
+        if (tag == "Egg" && nearestObj.GetComponent<eggCode>().EggIsInNest())
+        {
+            nearestObj = null;
+        }
+        foreach (GameObject obj in objs)
+        {
+            float dist = Vector2.Distance(this.transform.position, obj.transform.position);
+            if (dist < minDist)
+            {
+                minDist = dist;
+                if (tag == "Egg" && obj.GetComponent<eggCode>().EggIsInNest())
+                {
+                    continue;
+                }
+                nearestObj = obj;
+            }
+        }
+        return nearestObj;
+    }
+
+
     void ExtinguishFire(GameObject fire)
     {
         GameEventsManager.instance.miscEvents.FirePutOut();

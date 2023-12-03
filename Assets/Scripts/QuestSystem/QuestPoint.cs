@@ -55,6 +55,10 @@ public class QuestPoint : MonoBehaviour
         GameEventsManager.instance.inputEvents.onSubmitPressed -= SubmitPressed;
     }
 
+    public string GetQuestID()
+    {
+        return questId;
+    }
     private void SubmitPressed()
     {
         if (!playerIsNear)

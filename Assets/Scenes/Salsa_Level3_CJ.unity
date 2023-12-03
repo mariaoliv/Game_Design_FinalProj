@@ -1416,7 +1416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &584543583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2322,6 +2322,8 @@ MonoBehaviour:
   transitionAnimator: {fileID: 1211986983}
   SceneToLoad: Overworld
   qm: {fileID: 1846976324}
+  pointer: {fileID: 0}
+  levelNumber: -1
   playerTextDisplay: {fileID: 352088297}
 --- !u!1 &1188184304
 GameObject:
@@ -3299,6 +3301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tsm: {fileID: 0}
+  pointer: {fileID: 0}
 --- !u!4 &1846976325
 Transform:
   m_ObjectHideFlags: 0

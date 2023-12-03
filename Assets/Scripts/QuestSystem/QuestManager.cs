@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class QuestManager : MonoBehaviour
@@ -17,6 +18,8 @@ public class QuestManager : MonoBehaviour
 
     // new changes
     public TreeStumpManager tsm;
+
+    public Window_QuestPointer pointer;
 
     private void Awake()
     {
@@ -45,6 +48,67 @@ public class QuestManager : MonoBehaviour
 
             GameEventsManager.instance.questEvents.QuestStateChange(quest);
         }
+
+        if (pointer != null)
+        {
+            SetActiveQuestsForPointer();
+        }
+    }
+
+    public int GetNumNotStartedQuests()
+    {
+        int count = 0;
+        foreach (Quest q in questMap.Values)
+        {
+            if (q.state == QuestState.REQUIREMENTS_NOT_MET || q.state == QuestState.CAN_START)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    // return number of quests that are in the IN_PROGRESS or CAN_FINISH state -- to be used with quest pointer...
+    public int GetNumActiveQuests()
+    {
+        int count = 0;
+        foreach (Quest q in questMap.Values)
+        {
+            if (q.state == QuestState.IN_PROGRESS || q.state == QuestState.CAN_FINISH)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public void SetActiveQuestsForPointer()
+    {
+        int activeQuests = GetNumActiveQuests();
+        /*
+        if (activeQuests == 0)
+        {
+            string[] questIds = { };
+            pointer.SetActiveQuests(questIds);
+        }
+        else if (pointer != null)
+        */
+        if (pointer != null)
+        {
+            string[] questIds = new string[GetNumActiveQuests()];
+            int idx = 0;
+            foreach (string id in questMap.Keys)
+            {
+                if (questMap[id].state == QuestState.IN_PROGRESS || questMap[id].state == QuestState.CAN_FINISH)
+                {
+                    questIds[idx] = id;
+                    idx++;
+                }              
+            }
+            
+            // call set active quests for the pointer
+            pointer.SetActiveQuests(questIds);
+        }
     }
 
     public float GetQuestMapLength()
@@ -64,6 +128,8 @@ public class QuestManager : MonoBehaviour
         }
         return (float)(count);
     }
+
+    
 
     private void OnDisable()
     {
@@ -96,6 +162,10 @@ public class QuestManager : MonoBehaviour
         Quest quest = GetQuestByID(id);
         quest.state = state;
         GameEventsManager.instance.questEvents.QuestStateChange(quest);
+        if (pointer != null)
+        {
+            SetActiveQuestsForPointer();
+        }
     }
 
     private void StartQuest(string id)
@@ -103,6 +173,10 @@ public class QuestManager : MonoBehaviour
         Quest quest = GetQuestByID(id);
         quest.InstantiateCurrentQuestStep(this.transform);
         ChangeQuestState(quest.info.id, QuestState.IN_PROGRESS);
+        if (pointer != null)
+        {
+            SetActiveQuestsForPointer();
+        }
     }
 
     private void AdvanceQuest(string id)
@@ -125,7 +199,10 @@ public class QuestManager : MonoBehaviour
         {
             ChangeQuestState(id, QuestState.CAN_FINISH);
         }
-        
+        if (pointer != null)
+        {
+            SetActiveQuestsForPointer();
+        }
     }
 
     private void FinishQuest(string id)
@@ -142,6 +219,10 @@ public class QuestManager : MonoBehaviour
         if (id == "PutOutFiresQuest")
         {
             PlayerPrefs.SetInt(id, 1); // 1 means quest has been completed
+        }
+        if (pointer != null)
+        {
+            SetActiveQuestsForPointer();
         }
     }
 
@@ -232,6 +313,11 @@ public class QuestManager : MonoBehaviour
             SaveQuest(quest);
             PlayerPrefs.SetInt("XP", PublicVars.xp);
         }
+        /*
+        if (pointer != null)
+        {
+            pointer.SaveQuestId();
+        } */
     }
 
     private void SaveQuest(Quest quest)

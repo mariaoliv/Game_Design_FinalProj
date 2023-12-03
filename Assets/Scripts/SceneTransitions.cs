@@ -11,6 +11,11 @@ public class Door : MonoBehaviour
     public string sceneToLoad; // Name of the scene to load
     public QuestManager qm;
 
+    public Window_QuestPointer pointer;
+
+    //public bool inPlatformer;
+    public int levelNumber = -1;
+
     //public Animator transitionAnimator;
 
 
@@ -53,7 +58,17 @@ public class Door : MonoBehaviour
 
         //transitionAnimator.SetTrigger("StartFadeOut");
 
+        if (levelNumber != -1)
+        {
+            GameEventsManager.instance.playerEvents.PlatformerLevelCompleted(levelNumber);
+        }
+
         qm.SaveAllQuests(); // the if statement was deleted because the progress of completing the platformer level didn't get saved
+
+        if (pointer != null)
+        {
+            pointer.SaveQuestId();
+        }
 
         /*
         if (SceneManager.GetActiveScene().name == "Overworld")

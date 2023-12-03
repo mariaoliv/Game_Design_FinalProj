@@ -55,4 +55,8 @@ public class eggCode : MonoBehaviour
             target = col.gameObject;
         }
     }
+    public bool EggIsInNest()
+    {
+        return finished;
+    }
 }

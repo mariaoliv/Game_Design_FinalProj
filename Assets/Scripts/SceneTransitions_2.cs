@@ -13,6 +13,10 @@ public class SceneTransitions_2 : MonoBehaviour
 
     public QuestManager qm;
 
+    public Window_QuestPointer pointer;
+
+    public int levelNumber = -1;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !transitionStarted)
@@ -26,7 +30,17 @@ public class SceneTransitions_2 : MonoBehaviour
 
     public void StartTransitionSequence()
     {
+        if (levelNumber != -1)
+        {
+            GameEventsManager.instance.playerEvents.PlatformerLevelCompleted(levelNumber);
+        }
+
         qm.SaveAllQuests();
+
+        if (pointer != null)
+        {
+            pointer.SaveQuestId();
+        }
 
         string[] transitionSentences = new string[]
         {

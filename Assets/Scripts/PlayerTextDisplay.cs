@@ -37,7 +37,7 @@ public class PlayerTextDisplay : MonoBehaviour
         textDisplay.font = textFont; // Use the assigned font
         textDisplay.text = sentences[0];
         textDisplay.fontSize = 1;
-        textDisplay.color = Color.black;
+        textDisplay.color = Color.white;
         textDisplay.alignment = TextAnchor.MiddleCenter;
 
         RectTransform textRectTransform = textGameObject.GetComponent<RectTransform>();

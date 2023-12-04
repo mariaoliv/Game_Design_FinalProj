@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Overworld.unity
     guid: 040898a5ead2ae443b504ec52d903bee
   - enabled: 1
+    path: Assets/Scenes/Newplatformer_CJ 1.unity
+    guid: 6f2a5a8b03c515546a3cd81c68ab330c
+  - enabled: 0
     path: Assets/Scenes/platformer_CJ.unity
     guid: a259ad38efa6bca488c51772d3c5f00e
   - enabled: 1

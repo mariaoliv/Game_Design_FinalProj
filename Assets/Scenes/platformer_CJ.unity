@@ -1761,6 +1761,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4262248194809593588, guid: 9ead6f3a2e5616e4e8ab34d1756942dc, type: 3}
+      propertyPath: orthographic size
+      value: 3.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262248194809593588, guid: 9ead6f3a2e5616e4e8ab34d1756942dc, type: 3}
       propertyPath: m_BackGroundColor.b
       value: 0
       objectReference: {fileID: 0}

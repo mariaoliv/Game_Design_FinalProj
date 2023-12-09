@@ -68,7 +68,7 @@ public class Window_QuestPointer : MonoBehaviour
                     target = lvl2Portal;
                     targetPosition = target.position;
                 }
-                if (currQuestId == "CompletePlatformerLevel3Quest")
+                if (currQuestId == "CompletePlatformerLvl3Quest")
                 {
                     target = lvl3Portal;
                     targetPosition = target.position;
@@ -96,7 +96,7 @@ public class Window_QuestPointer : MonoBehaviour
                     target = platformerLvl2QuestPoint;
                     targetPosition = target.position;
                 }
-                if (currQuestId == "CompletePlatformerLevel3Quest")
+                if (currQuestId == "CompletePlatformerLvl3Quest")
                 {
                     target = platformerLvl3QuestPoint;
                     targetPosition = target.position;

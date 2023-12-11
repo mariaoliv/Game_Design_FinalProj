@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: f496686c2dff04c4fbc27caf26000753
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - dialogue: {instanceID: 0}
+  - dialoguePanel: {fileID: 4266631481814749099, guid: b99feeb236244ce4da3aa9ee24c38d4a, type: 3}
+  - dialogueText: {instanceID: 0}
+  - nameText: {instanceID: 0}
+  - SalsaPortrait: {instanceID: 0}
+  - PavoPortrait: {instanceID: 0}
+  - SalsaAudio: {instanceID: 0}
+  - PavoAudio: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

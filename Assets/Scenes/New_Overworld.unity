@@ -134759,6 +134759,10 @@ PrefabInstance:
       propertyPath: levelNumber
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3275676657475984617, guid: c5bce375a69219c42ab1c5520d898d22, type: 3}
+      propertyPath: sceneToLoad
+      value: Platformer_Level3_CJ
+      objectReference: {fileID: 0}
     - target: {fileID: 3963443481699389562, guid: c5bce375a69219c42ab1c5520d898d22, type: 3}
       propertyPath: m_LocalScale.x
       value: 4

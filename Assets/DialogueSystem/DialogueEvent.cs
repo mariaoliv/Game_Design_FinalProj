@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement; // Make sure you have this using directive to
 public class DialogueEvent : MonoBehaviour
 {
     [SerializeField] DialogueAsset   dialogue; // Must be able to refer to incoming dialogue assets from events
+    //private DialogueAsset dialogue;
+
     [SerializeField] GameObject      dialoguePanel;
     [SerializeField] TextMeshProUGUI dialogueText;
     [SerializeField] TextMeshProUGUI nameText;
@@ -36,7 +38,12 @@ public class DialogueEvent : MonoBehaviour
     private int     dialogueLength;
     private string  currText;
     private Image   currPortrait;
-    public string sceneToLoad = "overworld_CJ"; // The name of the scene you want to load
+    //public string sceneToLoad = "overworld_CJ"; // The name of the scene you want to load
+
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     void Start()
     {
@@ -52,7 +59,8 @@ public class DialogueEvent : MonoBehaviour
     
     void Update()
     {
-        if(Input.GetButtonDown("Jump"))
+
+        if(Input.GetButtonDown("Jump") && dialogueActive)
         {
             ShowDialogue(dialogue.speakers, dialogue.lines, dialogue.emotion);
         }
@@ -63,11 +71,16 @@ public class DialogueEvent : MonoBehaviour
             
         }
         // Check if the left mouse button was clicked
-        if (Input.GetMouseButtonDown(0))
-        {
-            // Load the specified scene
-            SceneManager.LoadScene(sceneToLoad);
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    // Load the specified scene
+        //    SceneManager.LoadScene(sceneToLoad);
+        //}
+    }
+
+    public void callDialogue()
+    {
+        ShowDialogue(dialogue.speakers, dialogue.lines, dialogue.emotion);
     }
 
     public void ShowDialogue(string[] speakers, string[] lines, string[] emotion)

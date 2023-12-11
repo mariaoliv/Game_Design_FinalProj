@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Quest 1
   m_EditorClassIdentifier: 
   lines:
-  - 
-  - 
-  - 
-  - 
+  - Did you hear that loud bang last night?
+  - No? I barely slept too. Kept having this strange dream...
+  - Hmm...
+  - 'Well whatever. Could you check the south boarder? I haven''t cleared it out
+    yet, the fires are '
   speakers:
   - Gato
   - Pavo

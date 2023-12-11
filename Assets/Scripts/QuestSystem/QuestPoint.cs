@@ -11,7 +11,7 @@ public class QuestPoint : MonoBehaviour
     [Header("Config")]
     [SerializeField] private bool startPoint = true;
     [SerializeField] private bool finishPoint = true;
-
+    [SerializeField] DialogueEvent questDialogue;
 
     private bool playerIsNear = false;
     private string questId;
@@ -70,6 +70,7 @@ public class QuestPoint : MonoBehaviour
         if (currentQuestState.Equals(QuestState.CAN_START) && startPoint)
         {
             GameEventsManager.instance.questEvents.StartQuest(questId);
+            questDialogue.callDialogue();
         }
         else if (currentQuestState.Equals(QuestState.CAN_FINISH) && finishPoint) {
             GameEventsManager.instance.questEvents.FinishQuest(questId);

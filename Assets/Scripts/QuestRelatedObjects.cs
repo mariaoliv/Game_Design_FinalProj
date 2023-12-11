@@ -10,7 +10,7 @@ public class QuestRelatedObjects : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (questId == "EggsQuest" && this.gameObject.CompareTag("Egg Guard") && (qm.GetQuestState(questId) != QuestState.IN_PROGRESS))
+        if (questId == "EggsQuest" && (this.gameObject.CompareTag("Egg Guard")) && (qm.GetQuestState(questId) != QuestState.IN_PROGRESS))
         {
             Debug.Log("This is an egg guard " + qm.GetQuestState(questId));
             this.gameObject.SetActive(false);
@@ -19,6 +19,11 @@ public class QuestRelatedObjects : MonoBehaviour
         {
             this.gameObject.SetActive(false);
         }
+        /*
+        if (questId == "PutOutFiresQuest" && this.gameObject.CompareTag("Fire") && qm.GetQuestState(questId) != QuestState.IN_PROGRESS)
+        {
+            this.gameObject.SetActive(false);
+        } */
         else
         {
             this.gameObject.SetActive(true);
@@ -29,7 +34,11 @@ public class QuestRelatedObjects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.gameObject.CompareTag("Egg Guard") &&  qm.GetQuestState(questId) == QuestState.IN_PROGRESS)
+        if ((this.gameObject.CompareTag("Egg Guard")) && qm.GetQuestState(questId) == QuestState.IN_PROGRESS)
+        {
+            this.gameObject.SetActive(true);
+        }
+        if (this.gameObject.CompareTag("Fire") && qm.GetQuestState(questId) == QuestState.IN_PROGRESS)
         {
             this.gameObject.SetActive(true);
         }

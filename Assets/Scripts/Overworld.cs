@@ -36,7 +36,7 @@ public class Overworld : MonoBehaviour
     {
         if (PublicVars.gained_xp)
         {
-            xpText.alpha = 1;
+            //xpText.alpha = 1;
 
             displayXPTime -= Time.deltaTime;
 

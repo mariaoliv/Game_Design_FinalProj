@@ -5487,7 +5487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5814744247475575888, guid: 7d6cb2c4a32576a4fa3ccbbd2deb61cd, type: 3}
       propertyPath: sceneToLoad
-      value: Overworld
+      value: New_Overworld
       objectReference: {fileID: 0}
     - target: {fileID: 5814744247475575888, guid: 7d6cb2c4a32576a4fa3ccbbd2deb61cd, type: 3}
       propertyPath: transitionTime

@@ -21,6 +21,8 @@ public class QuestManager : MonoBehaviour
 
     public Window_QuestPointer pointer;
 
+    //public GameObject fireparent;
+
     private void Awake()
     {
         questMap = CreateQuestMap();
@@ -44,6 +46,10 @@ public class QuestManager : MonoBehaviour
             if (quest.state == QuestState.IN_PROGRESS)
             {
                 quest.InstantiateCurrentQuestStep(this.transform);
+                if ((quest.info.id == "PutOutFiresQuest" || quest.info.id == "EggsQuest") && pointer != null)
+                {
+                    pointer.gameObject.SetActive(false);
+                }
             }
 
             GameEventsManager.instance.questEvents.QuestStateChange(quest);
@@ -177,6 +183,15 @@ public class QuestManager : MonoBehaviour
         {
             SetActiveQuestsForPointer();
         }
+        /*
+        if (id == "PutOutFiresQuest")
+        {
+            fireparent.SetActive(true);
+        } */
+        if (pointer != null && (id == "PutOutFiresQuest" || id == "EggsQuest"))
+        {
+            pointer.gameObject.SetActive(false);
+        }
     }
 
     private void AdvanceQuest(string id)
@@ -198,6 +213,11 @@ public class QuestManager : MonoBehaviour
         else
         {
             ChangeQuestState(id, QuestState.CAN_FINISH);
+            if (pointer != null && (id == "PutOutFiresQuest" || id == "EggsQuest"))
+            {
+                //reenable the arrow so the player can find their way back to the quest point
+                pointer.gameObject.SetActive(true);
+            }
         }
         if (pointer != null)
         {

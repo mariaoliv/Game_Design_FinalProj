@@ -3289,7 +3289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionAnimator: {fileID: 1211986983}
-  SceneToLoad: Overworld
+  SceneToLoad: New_Overworld
   qm: {fileID: 1846976324}
   pointer: {fileID: 0}
   levelNumber: -1

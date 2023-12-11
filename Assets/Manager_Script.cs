@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Manager_Script : MonoBehaviour
 {
+    public GameObject dialoguePanel;
     public static bool Level1Completed { get; set; }
     public static bool Level2Completed { get; set; }
     public static bool Level3Completed { get; set; }
@@ -37,6 +38,7 @@ public class Manager_Script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dialoguePanel.SetActive(false);
         if (Level1Completed)
         {
             deadWestTilemap.SetActive(false);

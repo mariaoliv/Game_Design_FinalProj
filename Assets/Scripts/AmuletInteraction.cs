@@ -55,6 +55,6 @@ public class AmuletInteraction : MonoBehaviour, IPointerEnterHandler, IPointerEx
     {
         transitionAnimator.SetTrigger("StartFadeOut");
         yield return new WaitForSeconds(transitionTime);
-        SceneManager.LoadScene("Overworld"); // Change to your scene name
+        SceneManager.LoadScene("New_Overworld"); // Change to your scene name
     }
 }

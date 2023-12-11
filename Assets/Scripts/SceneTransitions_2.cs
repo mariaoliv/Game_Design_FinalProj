@@ -9,7 +9,7 @@ public class SceneTransitions_2 : MonoBehaviour
 
     private bool transitionStarted = false;
 
-    public string SceneToLoad = "MainMenu";
+    public string SceneToLoad;
 
     public QuestManager qm;
 

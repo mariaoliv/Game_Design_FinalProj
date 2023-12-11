@@ -333,11 +333,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1462810139638417444, guid: b1254830b036903498814281f84a995d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.72365
+      value: -2.27
       objectReference: {fileID: 0}
     - target: {fileID: 1462810139638417444, guid: b1254830b036903498814281f84a995d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9594982
+      value: 1.99
       objectReference: {fileID: 0}
     - target: {fileID: 1462810139638417444, guid: b1254830b036903498814281f84a995d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -383,6 +383,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: peacock
       objectReference: {fileID: 0}
+    - target: {fileID: 7466347928573395780, guid: b1254830b036903498814281f84a995d, type: 3}
+      propertyPath: m_Volume
+      value: 0.231
+      objectReference: {fileID: 0}
     - target: {fileID: 7487571154726058874, guid: b1254830b036903498814281f84a995d, type: 3}
       propertyPath: qm
       value: 
@@ -398,19 +402,45 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7117925816305658575, guid: b1254830b036903498814281f84a995d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 100169892}
   m_SourcePrefab: {fileID: 100100000, guid: b1254830b036903498814281f84a995d, type: 3}
 --- !u!114 &100169890 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7487571154726058874, guid: b1254830b036903498814281f84a995d, type: 3}
   m_PrefabInstance: {fileID: 100169889}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 100169891}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a34673bc53cc6c44a1db550428de218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &100169891 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7117925816305658575, guid: b1254830b036903498814281f84a995d, type: 3}
+  m_PrefabInstance: {fileID: 100169889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &100169892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100169891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4f5137d904cb9042990ced35a6eb67e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 100169891}
+  sentences:
+  - WASD to Move
+  - Press ENTER to interact with NPCs
+  displayTime: 3
+  textFont: {fileID: 12800000, guid: 997a43b767814dd0a7642ec9b78cba41, type: 3}
 --- !u!1001 &106992388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -430,6 +460,10 @@ PrefabInstance:
     - target: {fileID: 2891953197799650242, guid: dc38fdf26d5b7a549b54b1237b996b0a, type: 3}
       propertyPath: levelNumber
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891953197799650242, guid: dc38fdf26d5b7a549b54b1237b996b0a, type: 3}
+      propertyPath: sceneToLoad
+      value: Platformer_Level2_CJ
       objectReference: {fileID: 0}
     - target: {fileID: 5386488773343799668, guid: dc38fdf26d5b7a549b54b1237b996b0a, type: 3}
       propertyPath: m_LocalScale.x

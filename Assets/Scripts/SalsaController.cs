@@ -99,7 +99,7 @@ public class SalsaController : MonoBehaviour
             HandleSwing();
         }
 
-        if (isHoldingVine && !Input.GetMouseButton(0))
+        if (isHoldingVine && !Input.GetMouseButton(0) || Input.GetKey(KeyCode.J))
         {
             animator.SetBool("isPulling", false);
             ReleaseVines();
@@ -308,7 +308,7 @@ public class SalsaController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Vine") && Input.GetMouseButton(0))
+        if (collision.CompareTag("Vine") && Input.GetMouseButton(0) || Input.GetKey(KeyCode.J))
         {
             if (vineJoint == null)
             {
@@ -323,7 +323,7 @@ public class SalsaController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Vine") && Input.GetMouseButton(0))
+        if (collision.CompareTag("Vine") && Input.GetMouseButton(0) || Input.GetKey(KeyCode.J))
         {
             if (vineJoint == null)
             {

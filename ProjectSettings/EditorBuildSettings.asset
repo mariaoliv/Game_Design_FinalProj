@@ -11,23 +11,29 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 57d3c3e7197f8594fa45e17f002cf3e2
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Openning.unity
     guid: 563c8ae8588d0e4418fe77c838e72d74
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Openning_week4.unity
     guid: a3190bf7b9c90154285ee9357aea78d8
   - enabled: 0
     path: Assets/Scenes/overworld_CJ.unity
     guid: 5d9be46e4658e0042a9700929be98cfe
   - enabled: 1
+    path: Assets/Scenes/New_Overworld.unity
+    guid: a02a10da1843c4a21a4b697c6001baa3
+  - enabled: 0
     path: Assets/Scenes/Overworld.unity
     guid: 040898a5ead2ae443b504ec52d903bee
   - enabled: 0
     path: Assets/Scenes/Newplatformer_CJ 1.unity
     guid: 6f2a5a8b03c515546a3cd81c68ab330c
   - enabled: 1
-    path: Assets/Scenes/platformer_CJ.unity
+    path: Assets/Scenes/Platformer_Level2_CJ.unity
+    guid: e59cad3c572c5a1488da02d92ea245da
+  - enabled: 1
+    path: Assets/Scenes/Platformer_CJ.unity
     guid: a259ad38efa6bca488c51772d3c5f00e
   - enabled: 0
     path: Assets/Scenes/Salsa_Level3_CJ.unity

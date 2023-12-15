@@ -133,11 +133,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3043639629145371523, guid: 4c70b061cba289b4f8dfcf4ed5f56bdf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.07
+      value: 2.84
       objectReference: {fileID: 0}
     - target: {fileID: 3043639629145371523, guid: 4c70b061cba289b4f8dfcf4ed5f56bdf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.56
+      value: 4.13
       objectReference: {fileID: 0}
     - target: {fileID: 3043639629145371523, guid: 4c70b061cba289b4f8dfcf4ed5f56bdf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5381,7 +5381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5814744247475575888, guid: 7d6cb2c4a32576a4fa3ccbbd2deb61cd, type: 3}
       propertyPath: sceneToLoad
-      value: New_Overworld
+      value: NewOverworld_CJ
       objectReference: {fileID: 0}
     - target: {fileID: 5814744247475575888, guid: 7d6cb2c4a32576a4fa3ccbbd2deb61cd, type: 3}
       propertyPath: transitionTime
@@ -5403,11 +5403,37 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.46
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5814744247475575888, guid: 7d6cb2c4a32576a4fa3ccbbd2deb61cd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 505084663865073134, guid: 7d6cb2c4a32576a4fa3ccbbd2deb61cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1721296373}
   m_SourcePrefab: {fileID: 100100000, guid: 7d6cb2c4a32576a4fa3ccbbd2deb61cd, type: 3}
+--- !u!1 &1721296372 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 505084663865073134, guid: 7d6cb2c4a32576a4fa3ccbbd2deb61cd, type: 3}
+  m_PrefabInstance: {fileID: 1721296371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1721296373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721296372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0886a7d9b36b46b47b4b109fdc687ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionTime: 1
+  sceneToLoad: NewOverworld_CJ
+  qm: {fileID: 0}
+  pointer: {fileID: 0}
+  levelNumber: -1
 --- !u!1001 &1746000468
 PrefabInstance:
   m_ObjectHideFlags: 0

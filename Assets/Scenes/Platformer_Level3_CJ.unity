@@ -911,11 +911,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3043639629145371523, guid: 4c70b061cba289b4f8dfcf4ed5f56bdf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.12
+      value: 6.68
       objectReference: {fileID: 0}
     - target: {fileID: 3043639629145371523, guid: 4c70b061cba289b4f8dfcf4ed5f56bdf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.68
+      value: 11.63
       objectReference: {fileID: 0}
     - target: {fileID: 3043639629145371523, guid: 4c70b061cba289b4f8dfcf4ed5f56bdf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3281,6 +3281,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 505084663865073134, guid: 7d6cb2c4a32576a4fa3ccbbd2deb61cd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1157743621}
+    - targetCorrespondingSourceObject: {fileID: 505084663865073134, guid: 7d6cb2c4a32576a4fa3ccbbd2deb61cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1157743626}
   m_SourcePrefab: {fileID: 100100000, guid: 7d6cb2c4a32576a4fa3ccbbd2deb61cd, type: 3}
 --- !u!1 &1157743620 stripped
 GameObject:
@@ -3299,12 +3302,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa08eaa9e5fecd4bb36f375d20bff04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionAnimator: {fileID: 1693402006}
-  SceneToLoad: New_Overworld
-  qm: {fileID: 1846976324}
+--- !u!114 &1157743626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157743620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0886a7d9b36b46b47b4b109fdc687ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionTime: 0
+  sceneToLoad: NewOverworld_CJ
+  qm: {fileID: 0}
   pointer: {fileID: 0}
   levelNumber: -1
-  playerTextDisplay: {fileID: 352088297}
 --- !u!1 &1188184304
 GameObject:
   m_ObjectHideFlags: 0
@@ -4237,11 +4251,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af6dd27cfd033744d9c61994372b5a31, type: 3}
---- !u!95 &1693402006 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8711988519998081117, guid: a8796db0201cb3d4491a3246aaab8d2c, type: 3}
-  m_PrefabInstance: {fileID: 1301293596}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1700927561
 GameObject:
   m_ObjectHideFlags: 0

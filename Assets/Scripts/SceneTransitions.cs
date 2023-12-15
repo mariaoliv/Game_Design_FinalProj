@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class Door : MonoBehaviour
+public class SceneTransitions : MonoBehaviour
 {
 
     //public Animator transitionAnimator;
@@ -63,7 +63,7 @@ public class Door : MonoBehaviour
             GameEventsManager.instance.playerEvents.PlatformerLevelCompleted(levelNumber);
         }
 
-        qm.SaveAllQuests(); // the if statement was deleted because the progress of completing the platformer level didn't get saved
+        // qm.SaveAllQuests(); // the if statement was deleted because the progress of completing the platformer level didn't get saved
 
         if (pointer != null)
         {

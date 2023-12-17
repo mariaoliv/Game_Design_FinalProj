@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Platformer_Level2_CJ.unity
     guid: e59cad3c572c5a1488da02d92ea245da
   - enabled: 1
-    path: Assets/Scenes/platformer_CJ.unity
+    path: Assets/Scenes/Platformer_CJ.unity
     guid: a259ad38efa6bca488c51772d3c5f00e
   - enabled: 0
     path: Assets/Scenes/OldScenes/Salsa_Level3_CJ.unity

@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject bulletPrefab;
 
-    //[SerializeField] Overworld world;
+    [SerializeField] Overworld world;
 
     Vector2 curPos;
 
@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
         if (health <= 0)
         {
             health = 100;
-            SceneManager.LoadScene("NewOverworld_CJ");
+            SceneManager.LoadScene("Overworld");
         }
 
         if (!isOpen)
@@ -219,7 +219,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                //world.GainXP(10);
+                world.GainXP(10);
                 Destroy(collision.gameObject, 0.5f);
             }
         }

@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/DialogueTest_CJ.unity
+    path: Assets/Scenes/OldScenes/DialogueTest_CJ.unity
     guid: 5c671c5dadcac414cb4afe1b6c5a77d6
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
@@ -14,20 +14,23 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Openning.unity
     guid: 563c8ae8588d0e4418fe77c838e72d74
+  - enabled: 1
+    path: Assets/Scenes/NewOverworld_CJ.unity
+    guid: b7d4a4ff995f42642b167a982e30c720
   - enabled: 0
     path: Assets/Scenes/Openning_week4.unity
     guid: a3190bf7b9c90154285ee9357aea78d8
   - enabled: 0
-    path: Assets/Scenes/overworld_CJ.unity
+    path: Assets/Scenes/OldScenes/overworld_CJ.unity
     guid: 5d9be46e4658e0042a9700929be98cfe
   - enabled: 1
     path: Assets/Scenes/New_Overworld.unity
     guid: a02a10da1843c4a21a4b697c6001baa3
   - enabled: 0
-    path: Assets/Scenes/Overworld.unity
+    path: Assets/Scenes/OldScenes/Overworld.unity
     guid: 040898a5ead2ae443b504ec52d903bee
   - enabled: 0
-    path: Assets/Scenes/Newplatformer_CJ 1.unity
+    path: Assets/Scenes/OldScenes/Newplatformer_CJ 1.unity
     guid: 6f2a5a8b03c515546a3cd81c68ab330c
   - enabled: 1
     path: Assets/Scenes/Platformer_Level2_CJ.unity
@@ -36,36 +39,36 @@ EditorBuildSettings:
     path: Assets/Scenes/Platformer_CJ.unity
     guid: a259ad38efa6bca488c51772d3c5f00e
   - enabled: 0
-    path: Assets/Scenes/Salsa_Level3_CJ.unity
+    path: Assets/Scenes/OldScenes/Salsa_Level3_CJ.unity
     guid: a5a21cacd75468e4885773c8e7f3b68a
   - enabled: 0
-    path: Assets/Scenes/Overworld_CJ_level2.unity
+    path: Assets/Scenes/OldScenes/Overworld_CJ_level2.unity
     guid: 5fd33a1b5478232408d2a02f31534b14
   - enabled: 1
-    path: Assets/Scenes/Salsa_Level3.unity
+    path: Assets/Scenes/OldScenes/Salsa_Level3.unity
     guid: 8f210865990b95a4c846102399c4fab4
   - enabled: 0
-    path: Assets/Scenes/MainGame.unity
+    path: Assets/Scenes/OldScenes/MainGame.unity
     guid: f3157b30d18622742906d6eb97c9d724
   - enabled: 0
-    path: Assets/Scenes/Tutorial.unity
+    path: Assets/Scenes/OldScenes/Tutorial.unity
     guid: 87d88c28f83c5304186fc3fe58735eb9
   - enabled: 1
     path: Assets/Scenes/Platformer_Level3_CJ.unity
     guid: 610443162fae2494fae283f0ff52b650
   - enabled: 1
-    path: Assets/Scenes/Level2.unity
+    path: Assets/Scenes/OldScenes/Level2.unity
     guid: f68e34f773ced274d8bc15e566ebe5d2
   - enabled: 0
-    path: Assets/Scenes/YouLost.unity
+    path: Assets/Scenes/OldScenes/YouLost.unity
     guid: 63493a136a1f045729bbe825a5f1c669
   - enabled: 1
-    path: Assets/Scenes/Level2.unity
+    path: Assets/Scenes/OldScenes/Level2.unity
     guid: f68e34f773ced274d8bc15e566ebe5d2
   - enabled: 0
-    path: Assets/Scenes/YouWin.unity
+    path: Assets/Scenes/OldScenes/YouWin.unity
     guid: f58a834d8db414f159c92420bf4696d3
   - enabled: 0
-    path: Assets/Scenes/WinScreen.unity
+    path: Assets/Scenes/OldScenes/WinScreen.unity
     guid: cbae09af7c70a054b9bfddf1d0bee461
   m_configObjects: {}

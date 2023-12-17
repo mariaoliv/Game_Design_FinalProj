@@ -12,13 +12,13 @@ public class Overworld : MonoBehaviour
     [SerializeField] TextMeshProUGUI xpText;
     float displayXPTime = 1f;
 
-    [SerializeField] GameObject enemies_around_eggs;
+    //[SerializeField] GameObject enemies_around_eggs;
     [SerializeField] QuestManager qm;
 
     // Start is called before the first frame update
     void Start()
     {
-        xpText.alpha = 0;
+        // xpText.alpha = 0;
     }
 
     public void GainXP(int amount)
@@ -49,9 +49,11 @@ public class Overworld : MonoBehaviour
 
         }
 
+        /*
         if ((enemies_around_eggs.gameObject.activeSelf == false) && (qm.GetQuestState("EggsQuest") == QuestState.IN_PROGRESS))
         {
             enemies_around_eggs.SetActive(true);
         }
+        */
     }
 }

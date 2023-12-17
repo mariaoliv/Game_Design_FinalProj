@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     bool tooClose = false;
     int health = 100;
     public HealthBar healthBar;
-    [SerializeField] Overworld world;
+    //[SerializeField] Overworld world;
     
     //[SerializeField] Animator animator;
 
@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
         
         //animator.SetFloat("speed", speed);
 
-        world = GameObject.FindGameObjectWithTag("Overworld").GetComponent<Overworld>();
+        //world = GameObject.FindGameObjectWithTag("Overworld").GetComponent<Overworld>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         healthBar.SetMaxHealth(health);
         healthBar.SetHealth(health);
@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
         healthBar.SetHealth(health);
         if (health <= 0)
         {
-            world.GainXP(10);
+            //world.GainXP(10);
             Destroy(this.gameObject);
         }
         float distFromPlayer = Vector2.Distance(player.transform.position, transform.position);

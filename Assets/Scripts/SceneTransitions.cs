@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class Door : MonoBehaviour
+public class SceneTransitions : MonoBehaviour
 {
 
     //public Animator transitionAnimator;
@@ -15,6 +15,7 @@ public class Door : MonoBehaviour
 
     //public bool inPlatformer;
     public int levelNumber = -1;
+    public string Level_Name; // Name of the current level
 
     //public Animator transitionAnimator;
 
@@ -63,7 +64,7 @@ public class Door : MonoBehaviour
             GameEventsManager.instance.playerEvents.PlatformerLevelCompleted(levelNumber);
         }
 
-        qm.SaveAllQuests(); // the if statement was deleted because the progress of completing the platformer level didn't get saved
+        // qm.SaveAllQuests(); // the if statement was deleted because the progress of completing the platformer level didn't get saved
 
         if (pointer != null)
         {
@@ -76,8 +77,13 @@ public class Door : MonoBehaviour
             qm.SaveAllQuests();
         } */
 
+        SalsaController.respawnCount = 0;
+
         // Wait for the animation to finish.
         yield return new WaitForSeconds(transitionTime);
+
+        // Mark the level as completed
+        LevelsManager.SetLevelCompleted(Level_Name, true);
 
         //transitionAnimator.SetTrigger("StartFadeOut");
         // Load the new scene.

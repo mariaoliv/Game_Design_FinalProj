@@ -1016,6 +1016,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4262248194809593588, guid: 9ead6f3a2e5616e4e8ab34d1756942dc, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262248194809593588, guid: 9ead6f3a2e5616e4e8ab34d1756942dc, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.9098039
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262248194809593588, guid: 9ead6f3a2e5616e4e8ab34d1756942dc, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.7882353
+      objectReference: {fileID: 0}
     - target: {fileID: 7129936214791161538, guid: 9ead6f3a2e5616e4e8ab34d1756942dc, type: 3}
       propertyPath: playerTransform
       value: 
@@ -2341,11 +2353,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8483937782140221818, guid: 92a714cbcb931470893a68ce7f0a4162, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.62
+      value: -2.7
       objectReference: {fileID: 0}
     - target: {fileID: 8483937782140221818, guid: 92a714cbcb931470893a68ce7f0a4162, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.55
+      value: 6.14
       objectReference: {fileID: 0}
     - target: {fileID: 8483937782140221818, guid: 92a714cbcb931470893a68ce7f0a4162, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2637,11 +2649,38 @@ PrefabInstance:
       propertyPath: sceneToLoad
       value: New_Overworld
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5814744247475575888, guid: 7d6cb2c4a32576a4fa3ccbbd2deb61cd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 505084663865073134, guid: 7d6cb2c4a32576a4fa3ccbbd2deb61cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1955055805}
   m_SourcePrefab: {fileID: 100100000, guid: 7d6cb2c4a32576a4fa3ccbbd2deb61cd, type: 3}
+--- !u!1 &1955055804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 505084663865073134, guid: 7d6cb2c4a32576a4fa3ccbbd2deb61cd, type: 3}
+  m_PrefabInstance: {fileID: 1955055803}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1955055805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955055804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0886a7d9b36b46b47b4b109fdc687ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionTime: 0
+  sceneToLoad: NewOverworld_CJ
+  qm: {fileID: 0}
+  pointer: {fileID: 0}
+  levelNumber: -1
+  Level_Name: Platformer_Level2_CJ
 --- !u!1001 &1988078192
 PrefabInstance:
   m_ObjectHideFlags: 0

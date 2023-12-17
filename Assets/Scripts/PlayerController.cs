@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
         if (health <= 0)
         {
             health = 100;
-            SceneManager.LoadScene("Overworld");
+            SceneManager.LoadScene("NewOverworld_CJ");
         }
 
         if (!isOpen)

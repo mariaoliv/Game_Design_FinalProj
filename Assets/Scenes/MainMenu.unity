@@ -329,13 +329,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cody Jiang
+  m_text: 'Brandon Lopez
 
-    Maria Sandu
-
-    Brandon Lopez
+    Cody Jiang
 
     Dylan Imperato
+
+    Maria Sandu
 
     Nick
     Dell''Aquilo'
@@ -2274,7 +2274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2538cae5bf76d124da556d679c51ca05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startScene: StoryBeforeOpenning
+  startScene: Openning
 --- !u!4 &1157797163
 Transform:
   m_ObjectHideFlags: 0

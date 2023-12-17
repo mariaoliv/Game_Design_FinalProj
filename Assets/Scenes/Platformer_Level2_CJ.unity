@@ -1016,6 +1016,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4262248194809593588, guid: 9ead6f3a2e5616e4e8ab34d1756942dc, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262248194809593588, guid: 9ead6f3a2e5616e4e8ab34d1756942dc, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.9098039
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262248194809593588, guid: 9ead6f3a2e5616e4e8ab34d1756942dc, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.7882353
+      objectReference: {fileID: 0}
     - target: {fileID: 7129936214791161538, guid: 9ead6f3a2e5616e4e8ab34d1756942dc, type: 3}
       propertyPath: playerTransform
       value: 
@@ -2341,11 +2353,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8483937782140221818, guid: 92a714cbcb931470893a68ce7f0a4162, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.64
+      value: -2.7
       objectReference: {fileID: 0}
     - target: {fileID: 8483937782140221818, guid: 92a714cbcb931470893a68ce7f0a4162, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.09
+      value: 6.14
       objectReference: {fileID: 0}
     - target: {fileID: 8483937782140221818, guid: 92a714cbcb931470893a68ce7f0a4162, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2668,6 +2680,7 @@ MonoBehaviour:
   qm: {fileID: 0}
   pointer: {fileID: 0}
   levelNumber: -1
+  Level_Name: Platformer_Level2_CJ
 --- !u!1001 &1988078192
 PrefabInstance:
   m_ObjectHideFlags: 0

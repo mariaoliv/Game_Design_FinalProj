@@ -46,11 +46,12 @@ public class SalsaController : MonoBehaviour
 
     private GameObject activePowerRadiusVisual;
 
-    private static int respawnCount;
+    public static int respawnCount = 0;
     private static Vector3 respawnPoint;
 
     private void Start()
     {
+
         Debug.Log(respawnCount);
         if (respawnCount != 0)
         {

@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Openning.unity
     guid: 563c8ae8588d0e4418fe77c838e72d74
+  - enabled: 1
+    path: Assets/Scenes/NewOverworld_CJ.unity
+    guid: b7d4a4ff995f42642b167a982e30c720
   - enabled: 0
     path: Assets/Scenes/Openning_week4.unity
     guid: a3190bf7b9c90154285ee9357aea78d8
@@ -27,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/OldScenes/Overworld.unity
     guid: 040898a5ead2ae443b504ec52d903bee
   - enabled: 0
-    path: Assets/Scenes/Newplatformer_CJ 1.unity
+    path: Assets/Scenes/OldScenes/Newplatformer_CJ 1.unity
     guid: 6f2a5a8b03c515546a3cd81c68ab330c
   - enabled: 1
     path: Assets/Scenes/Platformer_Level2_CJ.unity

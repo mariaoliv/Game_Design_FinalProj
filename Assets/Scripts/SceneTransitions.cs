@@ -15,6 +15,7 @@ public class SceneTransitions : MonoBehaviour
 
     //public bool inPlatformer;
     public int levelNumber = -1;
+    public string Level_Name; // Name of the current level
 
     //public Animator transitionAnimator;
 
@@ -76,8 +77,13 @@ public class SceneTransitions : MonoBehaviour
             qm.SaveAllQuests();
         } */
 
+        SalsaController.respawnCount = 0;
+
         // Wait for the animation to finish.
         yield return new WaitForSeconds(transitionTime);
+
+        // Mark the level as completed
+        LevelsManager.SetLevelCompleted(Level_Name, true);
 
         //transitionAnimator.SetTrigger("StartFadeOut");
         // Load the new scene.

@@ -67,6 +67,7 @@ public class SalsaController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator.SetBool("isGrabbing", false);
         animator.SetBool("isPulling", false);
+        animator.SetBool("isDead", false);
     }
 
     private void Update()
@@ -288,6 +289,7 @@ public class SalsaController : MonoBehaviour
         spriteRenderer.color = Color.red;
 
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        animator.SetBool("isDead", true);
 
         yield return new WaitForSeconds(1f);
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Queen_Dialogue : MonoBehaviour
 {
@@ -55,7 +56,13 @@ public class Queen_Dialogue : MonoBehaviour
         }
         else
         {
-            zeroText();
+                zeroText();
+            if (gameObject.name == "queen" && !Manager_Script.amuletReceived)
+            {
+
+                Manager_Script.amuletReceived = true;
+                SceneManager.LoadScene("New_Overworld");
+            }
         }
     }
 
@@ -64,25 +71,40 @@ public class Queen_Dialogue : MonoBehaviour
         nameText.text = "";
         dialogueText.text = "";
         index = 0;
-        dialoguePanel.SetActive(false);
+        if (dialoguePanel != null)
+        {
+            dialoguePanel.SetActive(false);
+        }
     }
 
     IEnumerator Typing()
     {
         if (gameObject.name == "queen")
         {
-            nameText.text = "Queen Tango";
-            dialogue[0] = "Hello Salsa! I want to thank you again for letting us move in so close to your nest.";
-            dialogue[1] = "The King is really upset about having to leave our home tree. Those EcoCorp bots really did a number on our island. Thankfully, I think I found a solution. I've been conducting research on a family heirloom. ";
-            dialogue[2] = "I've come to the conclusion that it is a communication device, it allows wearers from different points of time to talk to each other.";
-            dialogue[3] = "Navigate to the different trees on this island and use the device to see if you can find an ancestor to destroy the EcoCorp bots in that area before they've caused too much damage.";
-            dialogue[4] = "*Pavo receives the amulet*";
+            if (Manager_Script.amuletReceived == false)
+            {
+                nameText.text = "Queen Tango";
+                dialogue[0] = "Hello Pavo! I want to thank you again for letting us move in so close to your nest.";
+                dialogue[1] = "The King is really upset about having to leave our home tree. Those EcoCorp bots really did a number on our island. Thankfully, I think I found a solution. I've been conducting research on a family heirloom. ";
+                dialogue[2] = "I've come to the conclusion that it is a communication device, it allows wearers from different points of time to talk to each other.";
+                dialogue[3] = "Navigate to the different trees on this island and use the device to see if you can find an ancestor to destroy the EcoCorp bots in that area before they've caused too much damage. I suggest starting at the West Tree, then East Tree, then the Royal Tree.";
+                dialogue[4] = "*Pavo receives the amulet*";
+            }
+            else
+            {
+                nameText.text = "Queen Tango";
+                dialogue[0] = "Hello again. Remember your mission!";
+                dialogue[1] = "Save the Island! Navigate to the different trees on this island and use the device to see if you can find an ancestor to destroy the Ecocorp bots in that area before they've caused too much damage.";
+                dialogue[2] = "I suggest starting at the West Tree, then East Tree, then the Royal Tree.";
+                dialogue[3] = "Good Luck on your mission Pavo, I have the upmost confidence that you'll be successful.";
+                dialogue[4] = "Godspeed.";
+            }
 
         }
         else if (gameObject.name == "king")
         {
             nameText.text = "King Salsa III";
-            dialogue[0] = "Greetings Salsa. I'll be honest with you. I am not well.";
+            dialogue[0] = "Greetings Pavo. I'll be honest with you. I am not well.";
             dialogue[1] = "When Eco Corp first moved in, they promised my ancestors that they were 'environmentally conscious'.";
             dialogue[2] = "That was a lie. They have drained our trees of all their life, making them unlivable. ";
             dialogue[3] = "My Queen seems to have found a way to reverse the damage, but between me and you it sounds like a tall tale.";
@@ -109,7 +131,7 @@ public class Queen_Dialogue : MonoBehaviour
         else if (gameObject.name == "pinky")
         {
             nameText.text = "Pinky";
-            dialogue[0] = "Hi Salsa. I know I keep saying this, but thank you for letting us crash next to your nest.";
+            dialogue[0] = "Hi Pavo. I know I keep saying this, but thank you for letting us crash next to your nest.";
             dialogue[1] = "It seems to be one of the only places that Eco corp hasn't ruined.";
             dialogue[2] = "Me and my husband used to live in the East Tree, if only there was a way to bring back what once was.";
             dialogue[3] = "Despite all this, my husband seems to be a fan of Eco corp.";
@@ -132,6 +154,60 @@ public class Queen_Dialogue : MonoBehaviour
             dialogue[2] = "Why isn't my tree dead like the rest?";
             dialogue[3] = "Because my grandaddy never let those darn robots move in.";
             dialogue[4] = "That's why bird.";
+        }
+        else if (gameObject.name == "queen_2")
+        {
+            nameText.text = "Queen Tango";
+            dialogue[0] = "Congrats Pavo! It seems as if you have saved the royal Tree from EcoCorp!";
+            dialogue[1] = "The king is finally in good spirits again.";
+            dialogue[2] = "Thank you for your help, know that you'll forever be a friend.";
+            dialogue[3] = "In fact, I want to make you our very first non-monkey knight.";
+            dialogue[4] = "You are now Sir Pavo.";
+        }
+        else if (gameObject.name == "king_2")
+        {
+            nameText.text = "King Salsa III";
+            dialogue[0] = "Pavo my good friend, how are you?";
+            dialogue[1] = "Our royal tree is back, somehow. I'm not sure what I did to fix it, but it must have been very clever.";
+            dialogue[2] = "All that matters is that things are back to how they were.";
+            dialogue[3] = "That's not to say I didn't enjoy your neighborship. Because I did.";
+            dialogue[4] = "By the way, that's a nice amulet you got there. Can I have it?";
+        }
+        else if (gameObject.name == "tophat_2")
+        {
+            nameText.text = "Pops";
+            dialogue[0] = "Pavo! I told you the West tree was going to be ready in no time!";
+            dialogue[1] = "Me and my son thank you for your generosity while we were your guests.";
+            dialogue[2] = "*Pops tips his top hat in respect*";
+            dialogue[3] = "Here, something for your troubles.";
+            dialogue[4] = "*Pops hands Pavo a banana...this one's fresh.*";
+        }
+        else if (gameObject.name == "backwards_hat_2")
+        {
+            nameText.text = "Pops Jr.";
+            dialogue[0] = "Yo.";
+            dialogue[1] = "I know you were the one to save the West Tree.";
+            dialogue[2] = "I'm good at reading people, and I could tell you're visiting us to see how grateful we are.";
+            dialogue[3] = "Kind of vain, but you deserve it I guess.";
+            dialogue[4] = "Anyways, respect yo.";
+        }
+        else if (gameObject.name == "pinky_2")
+        {
+            nameText.text = "Pinky";
+            dialogue[0] = "Pavo! I don't know what happened but the East Tree is alive again!";
+            dialogue[1] = "For some reason, I want to thank you for this. Although I'm not sure why.";
+            dialogue[2] = "Well, in any case, I still need to thank you for letting me and my husband stay with you.";
+            dialogue[3] = "Speaking of my husband, I'm not sure what's going on with him?";
+            dialogue[4] = "He seems to be sad now that Eco Corp is gone.";
+        }
+        else if (gameObject.name == "ecocorp_fan_2")
+        {
+            nameText.text = "Stan";
+            dialogue[0] = "This is a travesty.";
+            dialogue[1] = "What will we do now that Eco Corp is gone?";
+            dialogue[2] = "They did alot of bad, I admit that.";
+            dialogue[3] = "But they also did a lot of good, like this corporate merchandise that they gave me.";
+            dialogue[4] = "Hopefully, they come back one day. A monkey can only hope.";
         }
         foreach (char letter in dialogue[index].ToCharArray())
         {

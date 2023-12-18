@@ -34,11 +34,36 @@ public class Manager_Script : MonoBehaviour
     public GameObject royalRobot2;
     public GameObject royalRobot3;
 
+    public GameObject king;
+    public GameObject king2;
+
+    public GameObject queen;
+    public GameObject queen2;
+
+    public GameObject pops;
+    public GameObject pops2;
+
+    public GameObject popsjr;
+    public GameObject popsjr2;
+
+    public GameObject pinky;
+    public GameObject pinky2;
+
+    public GameObject stan;
+    public GameObject stan2;
+
+    public GameObject star1;
+    public GameObject star2;
+    public GameObject star3;
+
 
     // Start is called before the first frame update
     void Start()
     {
         dialoguePanel.SetActive(false);
+        star1.SetActive(false);
+        star2.SetActive(false);
+        star3.SetActive(false);
         if (Level1Completed)
         {
             deadWestTilemap.SetActive(false);
@@ -47,15 +72,28 @@ public class Manager_Script : MonoBehaviour
             westRobot2.SetActive(false);
             westRobot3.SetActive(false);
             westTreeAlive.SetActive(true);
+            pops.SetActive(false);
+            popsjr.SetActive(false);
+            pops2.SetActive(true);
+            popsjr2.SetActive(true);
+            star1.SetActive(false);
         }
         else
         {
             westTreeAlive.SetActive(false);
             deadWestTilemap.SetActive(true);
-;            westTreeDead.SetActive(true);
+;           westTreeDead.SetActive(true);
             westRobot1.SetActive(true);
             westRobot2.SetActive(true);
             westRobot3.SetActive(true);
+            pops.SetActive(true);
+            popsjr.SetActive(true);
+            pops2.SetActive(false);
+            popsjr2.SetActive(false);
+            if (amuletReceived)
+            {
+                star1.SetActive(true);
+            }
         }
 
         if (Level2Completed)
@@ -66,6 +104,11 @@ public class Manager_Script : MonoBehaviour
             eastRobot2.SetActive(false);
             eastRobot3.SetActive(false);
             eastTreeAlive.SetActive(true);
+            pinky.SetActive(false);
+            stan.SetActive(false);
+            pinky2.SetActive(true);
+            stan2.SetActive(true);
+            star2.SetActive(false);
         }
         else
         {
@@ -75,6 +118,15 @@ public class Manager_Script : MonoBehaviour
             eastRobot1.SetActive(true);
             eastRobot2.SetActive(true);
             eastRobot3.SetActive(true);
+            pinky.SetActive(true);
+            stan.SetActive(true);
+            pinky2.SetActive(false);
+            stan2.SetActive(false);
+            if (amuletReceived)
+            {
+                star2.SetActive(true);
+            }
+            
         }
 
         if (Level3Completed)
@@ -85,6 +137,11 @@ public class Manager_Script : MonoBehaviour
             royalRobot2.SetActive(false);
             royalRobot3.SetActive(false);
             royalTreeAlive.SetActive(true);
+            king.SetActive(false);
+            queen.SetActive(false);
+            king2.SetActive(true);
+            queen2.SetActive(true);
+            star3.SetActive(false);
         }
         else
         {
@@ -94,6 +151,15 @@ public class Manager_Script : MonoBehaviour
             royalRobot1.SetActive(true);
             royalRobot2.SetActive(true);
             royalRobot3.SetActive(true);
+            king.SetActive(true);
+            queen.SetActive(true);
+            king2.SetActive(false);
+            queen2.SetActive(false);
+            if (amuletReceived)
+            {
+                star3.SetActive(true);
+            }
+           
         }
     }
  

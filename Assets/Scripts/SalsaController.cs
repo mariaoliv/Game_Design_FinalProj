@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SalsaController : MonoBehaviour
 {
+    public GameWin gameWin;
 
 
     private bool isPowerActive;
@@ -13,9 +14,13 @@ public class SalsaController : MonoBehaviour
 
     private float Move;
 
-    private float speed = 3;
+    private bool facingRight = true;
+    public float moveSpeed = 7f;
+    private Vector2 currentVelocity = Vector2.zero;
+    public float movementSmoothing = .05f;
+    public LayerMask groundLayer;
 
-    private float jumpForce = 4;
+    private float jumpForce = 7;
 
     private bool isGrounded;
 
@@ -28,11 +33,11 @@ public class SalsaController : MonoBehaviour
 
     private bool isHoldingVine = false;
 
-    private float swingForce = 1f;
+    public float swingForce = 8f;
 
     private float tension = 0f;
-    private float maxTension = 8f;
-    private float tensionIncrement = 0.2f;
+    private float maxTension = 12f;
+    private float tensionIncrement = 2f;
 
     private float originalVineLength;
     private SpriteRenderer vineSprite;
@@ -44,15 +49,13 @@ public class SalsaController : MonoBehaviour
 
     public GameObject powerRadiusVisual;
 
-    private GameObject activePowerRadiusVisual;
 
     public static int respawnCount = 0;
     private static Vector3 respawnPoint;
 
     private void Start()
     {
-
-        Debug.Log(respawnCount);
+        powerRadiusVisual.SetActive(false);
         if (respawnCount != 0)
         {
             transform.position = respawnPoint;
@@ -68,33 +71,57 @@ public class SalsaController : MonoBehaviour
 
     private void Update()
     {
-        Move = Input.GetAxisRaw("Horizontal");
-        Vector2 velocity = new Vector2(Move * speed, rb.velocity.y);
-        rb.velocity = velocity;
+        //Move = Input.GetAxisRaw("Horizontal");
+        //Vector2 velocity = new Vector2(Move * speed, rb.velocity.y);
+        //rb.velocity = velocity;
+
+        powerRadiusVisual.transform.position = transform.position;
+
+        if (!isHoldingVine)
+        {
+            float x = Input.GetAxisRaw("Horizontal");
+
+            animator.SetBool("isWalking", x != 0);
+            Vector2 targetVelocity = new Vector2(x * moveSpeed, rb.velocity.y);
+
+            rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref currentVelocity, movementSmoothing);
+            //player looking direction
+            if (x > 0 && !facingRight || x < 0 && facingRight)
+            {
+                facingRight = !facingRight;
+                Vector3 flipScale = transform.localScale;
+                flipScale.x *= -1;
+                transform.localScale = flipScale;
+            }
+        }
+
+        //better ground check
+        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 0.5f, groundLayer);
+        animator.SetBool("inAir", !isGrounded);
+
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            animator.SetBool("inAir", true);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
-        if (velocity.x != 0 && isGrounded)
-        {
-            animator.SetBool("isMoving", true);
+        //if (velocity.x != 0 && isGrounded)
+        //{
+            //animator.SetBool("isMoving", true);
 
-            if (Move > 0 && !spriteRenderer.flipX)
-            {
-                spriteRenderer.flipX = true;
-            }
-            else if (Move < 0 && spriteRenderer.flipX)
-            {
-                spriteRenderer.flipX = false;
-            }
-        }
-        else
-        {
-            animator.SetBool("isMoving", false);
-        }
-
+            //if (Move > 0 && !spriteRenderer.flipX)
+            //{
+                //spriteRenderer.flipX = true;
+            //}
+            //else if (Move < 0 && spriteRenderer.flipX)
+            //{
+                //spriteRenderer.flipX = false;
+            //}
+        //}
+        //else
+        //{
+            //animator.SetBool("isMoving", false);
+        //}
+        
         if (isHoldingVine)
         {
             HandleSwing();
@@ -114,37 +141,21 @@ public class SalsaController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            isPowerActive = true;
-            EngagePower();
-            ActivatePower();
+            
+            StartCoroutine(ShowAndHideCircle());
         }
         if(transform.position.y < -10){
             StartCoroutine(Die());
         }
-        else
-        {
-            isPowerActive = false;
-            DeactivatePower();
-        }
         
     }
 
-    private void ActivatePower()
+    IEnumerator ShowAndHideCircle()
     {
-        if (activePowerRadiusVisual == null)
-        {
-            activePowerRadiusVisual = Instantiate(powerRadiusVisual, transform.position, Quaternion.identity);
-            activePowerRadiusVisual.transform.localScale = new Vector3(powerRadius * 2, powerRadius * 2, 1);
-        }
-    }
-
-    private void DeactivatePower()
-    {
-        if (activePowerRadiusVisual != null)
-        {
-            Destroy(activePowerRadiusVisual);
-            activePowerRadiusVisual = null; 
-        }
+        powerRadiusVisual.SetActive(true);
+        EngagePower();
+        yield return new WaitForSeconds(0.1f);
+        powerRadiusVisual.SetActive(false);
     }
 
     private void EngagePower()
@@ -153,15 +164,18 @@ public class SalsaController : MonoBehaviour
 
         foreach (var collider in colliders)
         {
-            if (collider.CompareTag("Enemy"))
+            if (collider.CompareTag("Enemy") || collider.CompareTag("Eco"))
             {
-                Rigidbody2D enemyRb = collider.GetComponent<Rigidbody2D>();
-                if (enemyRb != null)
+                rb.velocity = new Vector2(rb.velocity.x, 0);
+                rb.AddForce(Vector2.up * (1.2f * jumpForce), ForceMode2D.Impulse);
+                Destroy(collider.gameObject);
+                if (collider.CompareTag("Eco"))
                 {
-                    enemyRb.gravityScale = 50;
+                    gameWin.ecoBotsKilled++;
                 }
             }
         }
+
     }
 
     private void OnDrawGizmosSelected()
@@ -253,11 +267,6 @@ public class SalsaController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Floor" || collision.gameObject.CompareTag("Floor"))
-        {
-            animator.SetBool("inAir", false);
-            isGrounded = true;
-        }
 
         if (collision.gameObject.CompareTag("Spike") && !isDead)
         {
@@ -269,16 +278,6 @@ public class SalsaController : MonoBehaviour
             StartCoroutine(Die());
         }
 
-        if (collision.gameObject.CompareTag("Banana"))
-        {
-            SceneManager.LoadScene("Level2");
-        }
-
-
-        if (collision.gameObject.CompareTag("Crown"))
-        {
-            SceneManager.LoadScene("WinScreen");
-        }
 
     }
 
@@ -298,14 +297,7 @@ public class SalsaController : MonoBehaviour
 
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.name == "Floor" || collision.gameObject.CompareTag("Floor"))
-        {
-            animator.SetBool("inAir", true);
-            isGrounded = false;
-        }
-    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

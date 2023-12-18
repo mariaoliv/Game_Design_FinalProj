@@ -18,6 +18,7 @@ TagManager:
   - Fires Parent Object
   - Egg Guard
   - Quest Point
+  - Eco
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - UI
   - Forest Details
   - salsa
-  - 
+  - Ground
   - 
   - 
   - 
